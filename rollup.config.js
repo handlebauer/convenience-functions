@@ -9,5 +9,5 @@ export default {
     { file: pkg.main, format: 'cjs' },
     { file: pkg.module, format: 'esm' },
   ],
-  plugins: [terser({ keep_fnames: true })],
+  plugins: [terser({ keep_fnames: true, keep_fargs: true })],
 }
