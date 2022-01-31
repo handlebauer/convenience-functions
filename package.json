@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "The state of being able to proceed with something with little effort or difficulty",
   "main": "src/index.js",
+  "type": "module",
   "repository": "https://github.com/handlebauer/convenience-functions.git",
   "author": "Donald Geddes <hi@donaldgeddes.ca>",
   "license": "MIT",
