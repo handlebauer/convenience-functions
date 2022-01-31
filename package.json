@@ -9,6 +9,9 @@
     "require": "./lib/index.cjs",
     "import": "./lib/index.js"
   },
+  "files": [
+    "lib"
+  ],
   "repository": "https://github.com/handlebauer/convenience-functions.git",
   "author": "Donald Geddes <hi@donaldgeddes.ca>",
   "license": "MIT",
