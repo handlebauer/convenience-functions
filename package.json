@@ -1,0 +1,15 @@
+{
+  "name": "@hbauer/convenience-functions",
+  "version": "0.0.0",
+  "description": "The state of being able to proceed with something with little effort or difficulty",
+  "main": "src/index.js",
+  "repository": "https://github.com/handlebauer/convenience-functions.git",
+  "author": "Donald Geddes <hi@donaldgeddes.ca>",
+  "license": "MIT",
+  "devDependencies": {
+    "@hbauer/eslint-config": "^1.2.1",
+    "@hbauer/prettier-config": "^1.1.0",
+    "eslint": "^8.8.0",
+    "prettier": "^2.5.1"
+  }
+}
