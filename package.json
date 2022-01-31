@@ -1,6 +1,6 @@
 {
   "name": "@hbauer/convenience-functions",
-  "version": "0.4.2",
+  "version": "0.5.0-0",
   "description": "The state of being able to proceed with something with little effort or difficulty",
   "type": "module",
   "main": "./lib/index.cjs",
