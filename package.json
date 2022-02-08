@@ -3,17 +3,17 @@
   "version": "0.5.2",
   "description": "The state of being able to proceed with something with little effort or difficulty",
   "type": "module",
-  "main": "./lib/index.cjs",
-  "module": "./lib/index.js",
   "exports": {
     "require": "./lib/index.cjs",
     "import": "./lib/index.js"
   },
+  "module": "./lib/index.js",
+  "main": "./lib/index.cjs",
   "files": [
     "lib"
   ],
   "repository": "https://github.com/handlebauer/convenience-functions.git",
-  "author": "Donald Geddes <hi@donaldgeddes.ca>",
+  "author": "Donald Geddes",
   "license": "MIT",
   "prettier": "@hbauer/prettier-config",
   "eslintConfig": {
