@@ -6,4 +6,11 @@
  */
 const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 
-export { pipe }
+/**
+ * Map over an array of values using the supplied function
+ * @param {function} fn
+ * @returns {Array} An array with resulting values
+ */
+const map = fn => arr => arr.map(fn)
+
+export { pipe, map }
