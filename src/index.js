@@ -4,4 +4,6 @@ export { join } from './join.js'
 
 export { buildURL } from './build-url.js'
 
+export { typeOf } from './type-of.js'
+
 export * from './fns.js'
