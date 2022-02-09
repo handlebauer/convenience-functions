@@ -6,7 +6,7 @@ import { pathToFileURL } from 'url'
  * @returns {string} A correctly concatted path
  * @example
  *   import { dirname, join } from '@hbauer/convenience-functions'
- *   const dir = dirname(import.meta.url)
+ *   const dirname = _dirname(import.meta.url)
  *   const pathToFile = join(dir, 'module.js')
  */
 export const join = (base, ...paths) =>
