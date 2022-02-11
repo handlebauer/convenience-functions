@@ -1,17 +1,29 @@
 import { pipe } from './fns.js'
 
+/**
+ * @param {Record<string, string>} params
+ * @returns {(url: URL) => URL}
+ */
 const addParams = params => url => (
+  // @ts-ignore
   params && (url.search = new URLSearchParams(params)), url
 )
 
-const createURL = ({ host, path }) => new URL(path ? `${host}/${path}` : host)
+/**
+ * @param {Object} param
+ * @param {string} param.host
+ * @param {string} param.path
+ * @returns
+ */
+const constructURL = ({ host, path }) =>
+  new URL(path ? `${host}/${path}` : host)
 
 /**
- * @param {object} params
+ * @param {Object} params
  * @param {string} params.host
  * @param {string} [params.path] - Optional
- * @param {Object<string, any>} [params.params] - Optional
- * @returns {URL} A fully qualified URL interface
+ * @param {Record<string,string>} [params.params] - Optional
+ * @returns {URL|Object} A fully qualified URL interface
  * @example
  *   const url = buildURL({
  *     host: 'https://example.com',
@@ -20,6 +32,6 @@ const createURL = ({ host, path }) => new URL(path ? `${host}/${path}` : host)
  *   })
  */
 const buildURL = ({ host, path, params }) =>
-  pipe({ host, path }, createURL, addParams(params))
+  pipe({ host, path }, constructURL, addParams(params))
 
 export { buildURL }

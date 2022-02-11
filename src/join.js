@@ -1,3 +1,4 @@
+// @ts-ignore
 import { pathToFileURL } from 'url'
 
 /**

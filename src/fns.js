@@ -8,8 +8,8 @@ const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 
 /**
  * Map over an array of values using the supplied function
- * @param {function} fn
- * @returns {Array} An array with resulting values
+ * @param {function|any} fn
+ * @returns {(arr: any[]) => any[]} An array with resulting values
  */
 const map = fn => arr => arr.map(fn)
 
