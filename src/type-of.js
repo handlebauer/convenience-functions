@@ -1,5 +1,5 @@
 /**
- * Very much like `typeof` can tell the difference between objects and arrays
+ * Very much like `typeof` but can tell the difference between objects and arrays
  * @param {any} operand The value to be checked against
  * @returns {string} A string indicating the type, e.g. 'undefined'
  * @example
