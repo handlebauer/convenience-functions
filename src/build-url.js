@@ -10,20 +10,15 @@ const addParams = params => url => (
 )
 
 /**
- * @param {Object} param
- * @param {string} param.host
- * @param {string} param.path
- * @returns
+ * @param {{ host: string, path: string }} param
+ * @returns {URL}
  */
 const constructURL = ({ host, path }) =>
   new URL(path ? `${host}/${path}` : host)
 
 /**
- * @param {Object} params
- * @param {string} params.host
- * @param {string} [params.path] - Optional
- * @param {Record<string,string>} [params.params] - Optional
- * @returns {URL|Object} A fully qualified URL interface
+ * @param {{ host: string, path?: string, params?: { [key: string]: string } }} param
+ * @returns {URL} A fully qualified URL interface
  * @example
  *   const url = buildURL({
  *     host: 'https://example.com',
