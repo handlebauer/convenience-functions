@@ -17,7 +17,7 @@ const map = fn => arr => arr.map(fn)
  * Find the intersection of two unsorted arrays
  * @param {any[]} a
  * @param {any[]} b
- * @param {Set<any[]>} c
+ * @param {Set<any[]>} [c]
  * @returns {any[]}
  */
 const intersection = (a, b, c) => (
