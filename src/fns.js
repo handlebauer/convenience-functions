@@ -13,4 +13,15 @@ const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
  */
 const map = fn => arr => arr.map(fn)
 
-export { pipe, map }
+/**
+ * Find the intersection of two unsorted arrays
+ * @param {any[]} a
+ * @param {any[]} b
+ * @param {Set<any[]>} c
+ * @returns {any[]}
+ */
+const intersection = (a, b, c) => (
+  (c = new Set(a)), b.filter(val => c.has(val))
+)
+
+export { pipe, map, intersection }
