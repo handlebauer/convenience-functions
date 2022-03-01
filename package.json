@@ -11,7 +11,7 @@
   "browser": {
     "url": "./shims/url/index.js"
   },
-  "module": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "main": "./lib/index.cjs",
   "types": "types/index.d.ts",
   "files": [
