@@ -1,5 +1,3 @@
-// /** @param {string[]} items @returns {string} */
-
 /**
  * @param {string[]} items
  * @returns {string}
