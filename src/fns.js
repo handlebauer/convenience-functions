@@ -24,4 +24,11 @@ const intersection = (a, b, c) => (
   (c = new Set(a)), b.filter(val => c.has(val))
 )
 
-export { pipe, map, intersection }
+/**
+ * Pass an argument through
+ * @param {*} _
+ * @returns {*}
+ */
+const pass = _ => _
+
+export { pipe, map, intersection, pass }
