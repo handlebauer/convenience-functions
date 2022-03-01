@@ -1,6 +1,6 @@
 {
   "name": "@hbauer/convenience-functions",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "The state of being able to proceed with something with little effort or difficulty",
   "type": "module",
   "exports": {
