@@ -1,4 +1,5 @@
 import { pipe } from './fns.js'
+import { fileURLToPath } from 'url'
 
 /**
  * @param {Record<string, string>} params
@@ -26,7 +27,9 @@ const constructURL = ({ host, path }) =>
  *     params: { hello: 'world' },
  *   })
  */
-const buildURL = ({ host, path, params }) =>
-  pipe({ host, path }, constructURL, addParams(params))
+const buildURL = ({ host, path, params }) => {
+  console.log(fileURLToPath('file:'))
+  return pipe({ host, path }, constructURL, addParams(params))
+}
 
 export { buildURL }
