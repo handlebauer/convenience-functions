@@ -22,7 +22,7 @@
     "extends": "@hbauer/eslint-config"
   },
   "scripts": {
-    "build": "shx rm ./lib ./types && rollup -c && tsc -p jsconfig.json",
+    "build": "shx rm -rf ./lib ./types && rollup -c && tsc -p jsconfig.json",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
