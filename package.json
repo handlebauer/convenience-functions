@@ -9,7 +9,8 @@
     "browser": "./lib/index.js"
   },
   "browser": {
-    "url": "./shims/url/index.js"
+    "url": "./shims/url/index.js",
+    "@hbauer/convenience-functions": "./lib/index.js"
   },
   "module": "./lib/index.js",
   "main": "./lib/index.cjs",
