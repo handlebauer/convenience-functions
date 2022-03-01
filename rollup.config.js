@@ -6,7 +6,7 @@ export default {
   input,
   external: ['url'],
   output: [
-    { file: pkg.main, format: 'cjs' },
-    { file: pkg.module, format: 'esm' },
+    { file: pkg.exports.require, format: 'cjs' },
+    { file: pkg.exports.import, format: 'esm' },
   ],
 }

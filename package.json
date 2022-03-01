@@ -1,11 +1,15 @@
 {
   "name": "@hbauer/convenience-functions",
-  "version": "0.14.2",
+  "version": "0.14.1",
   "description": "The state of being able to proceed with something with little effort or difficulty",
   "type": "module",
   "exports": {
     "require": "./lib/index.cjs",
-    "import": "./lib/index.js"
+    "import": "./lib/index.mjs",
+    "browser": "./lib/index.js"
+  },
+  "browser": {
+    "url": "./shims/url/index.js"
   },
   "module": "./lib/index.js",
   "main": "./lib/index.cjs",
