@@ -8,10 +8,33 @@ const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 
 /**
  * Map over an array of values using the supplied function
- * @param {(val: any, i: number, arr: any[]) => any[]} fn
- * @returns {(arr: any[]) => any[]} An array with resulting values
+ * @template T
+ * @param {(val: T, i: number, arr: T[]) => any} fn
  */
-const map = fn => arr => arr.map(fn)
+const map =
+  fn =>
+  /**
+   * @param {T[]} arr
+   */
+  arr =>
+    arr.map(fn)
+
+/**
+ * @template {(...args: any[]) => any} F
+ * @template A, B
+ * @param {F} fn
+ */
+const flip =
+  fn =>
+  /**
+   * @param {A} a
+   */
+  a =>
+  /**
+   * @param {B} b
+   */
+  b =>
+    fn(b)(a)
 
 /**
  * Return a property by name
@@ -112,6 +135,7 @@ const zipInto =
 export {
   pipe,
   map,
+  flip,
   prop,
   trace,
   traceJSON,
