@@ -66,6 +66,13 @@ const intersection = (a, b, c) => (
 )
 
 /**
+ * @template A
+ * @param {A[]} arr
+ * @returns {A[]}
+ */
+const reverse = arr => arr.map((_, i) => arr.at(-i - 1))
+
+/**
  * @template {string} K
  * @param {K} key
  */
@@ -102,6 +109,7 @@ export {
   first,
   assignTo,
   intersection,
+  reverse,
   groupBy,
   zipInto,
 }
