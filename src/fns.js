@@ -1,8 +1,8 @@
 /**
  * Pipe a value through 1+ functions
- * @param {*} val
+ * @param {any} val
  * @param  {function[]} fns
- * @returns {*}
+ * @returns {any}
  */
 const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 
@@ -29,10 +29,12 @@ const trace = val => (console.log(val), val)
 
 /**
  * Pass an argument through
- * @param {*} _
- * @returns {*}
+ * @param {any} _
+ * @returns {any}
  */
 const pass = _ => _
+
+const equals = a => b => a === b
 
 /**
  * @template T
