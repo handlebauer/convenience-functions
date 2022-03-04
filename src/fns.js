@@ -66,18 +66,32 @@ const intersection = (a, b, c) => (
 )
 
 /**
+ * @template {string} K
+ * @param {K} key
+ */
+const groupBy =
+  key =>
+  /**
+   * @template {any[]} E
+   * @param {E} arr
+   * @returns {Record<K, E[number]>[]}
+   */
+  arr =>
+    arr.reduce((acc, val) => ({ ...acc, [val[key]]: val }), {})
+
+/**
  * @template {string[] | readonly string[]} K
  * @param {K} keys
  */
-const zipObject =
+const zipInto =
   keys =>
   /**
-   * @template {any[]} E
-   * @param {E} entry
+   * @template {any[] | readonly any[]} E
+   * @param {E} arr
    * @returns {{ [key in K[number]]: E[number] }}
    */
-  entry =>
-    entry.reduce((acc, val, i) => ({ ...acc, [keys[i]]: val }), {})
+  arr =>
+    arr.reduce((acc, val, i) => ({ ...acc, [keys[i]]: val }), {})
 
 export {
   pipe,
@@ -88,5 +102,6 @@ export {
   first,
   assignTo,
   intersection,
-  zipObject,
+  groupBy,
+  zipInto,
 }
