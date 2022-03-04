@@ -40,6 +40,7 @@ const traceJSON = val => (console.log(JSON.stringify(val, null, 2)), val)
  */
 const pass = _ => _
 
+/** @type {(a: any) => (b: any) => boolean} */
 const equals = a => b => a === b
 
 /**
