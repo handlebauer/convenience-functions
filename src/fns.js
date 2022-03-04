@@ -28,6 +28,12 @@ const prop = string => obj =>
 const trace = val => (console.log(val), val)
 
 /**
+ * @template T
+ * @param {T} val
+ */
+const traceJSON = val => (console.log(JSON.stringify(val, null, 2)), val)
+
+/**
  * Pass an argument through
  * @param {any} _
  * @returns {any}
@@ -107,6 +113,8 @@ export {
   map,
   prop,
   trace,
+  traceJSON,
+  equals,
   pass,
   first,
   assignTo,
