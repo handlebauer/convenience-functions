@@ -14,6 +14,47 @@ const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 const map = fn => arr => arr.map(fn)
 
 /**
+ * Return a property by name
+ * @param {string} string
+ * @returns {(obj: { [key: string]: any }) => any}
+ */
+const prop = string => obj =>
+  string.split('.').reduce((acc, key) => acc?.[key], obj)
+
+/**
+ * @template T
+ * @param {T} val
+ */
+const trace = val => (console.log(val), val)
+
+/**
+ * Pass an argument through
+ * @param {*} _
+ * @returns {*}
+ */
+const pass = _ => _
+
+/**
+ * @template T
+ * @param {Array<T>} first
+ */
+const first = ([first]) => first
+
+/**
+ * @template O
+ * @param {O} a
+ */
+const assignTo =
+  a =>
+  /**
+   * @template K
+   * @param {K} b
+   * @returns {O & K}
+   */
+  b =>
+    Object.assign(a, b)
+
+/**
  * Find the intersection of two unsorted arrays
  * @param {any[]} a
  * @param {any[]} b
@@ -25,10 +66,27 @@ const intersection = (a, b, c) => (
 )
 
 /**
- * Pass an argument through
- * @param {*} _
- * @returns {*}
+ * @template {string[] | readonly string[]} K
+ * @param {K} keys
  */
-const pass = _ => _
+const zipObject =
+  keys =>
+  /**
+   * @template {any[]} E
+   * @param {E} entry
+   * @returns {{ [key in K[number]]: E[number] }}
+   */
+  entry =>
+    entry.reduce((acc, val, i) => ({ ...acc, [keys[i]]: val }), {})
 
-export { pipe, map, intersection, pass }
+export {
+  pipe,
+  map,
+  prop,
+  trace,
+  pass,
+  first,
+  assignTo,
+  intersection,
+  zipObject,
+}
