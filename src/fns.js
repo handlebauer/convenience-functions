@@ -21,16 +21,17 @@ const map =
 
 /**
  * Reduce an array of values using the supplied function
- * @template K
+ * @template K, T
  * @param {(acc: K, val: K, i: number, arr: K[]) => any} fn
+ * @param {T} val
  */
 const reduce =
-  fn =>
+  (fn, val) =>
   /**
    * @param {K[]} arr
    */
   arr =>
-    arr.reduce(fn)
+    arr.reduce(fn, val)
 
 /**
  * @template {(...args: any[]) => any} F
