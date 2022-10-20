@@ -20,6 +20,19 @@ const map =
     arr.map(fn)
 
 /**
+ * Reduce an array of values using the supplied function
+ * @template K
+ * @param {(acc: K, val: K, i: number, arr: K[]) => any} fn
+ */
+const reduce =
+  fn =>
+  /**
+   * @param {K[]} arr
+   */
+  arr =>
+    arr.reduce(fn)
+
+/**
  * @template {(...args: any[]) => any} F
  * @template A, B
  * @param {F} fn
@@ -135,6 +148,7 @@ const zipInto =
 export {
   pipe,
   map,
+  reduce,
   flip,
   prop,
   trace,
