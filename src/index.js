@@ -6,6 +6,8 @@ export { writeFileHere } from './write-file-here.js'
 
 export { buildURL } from './build-url.js'
 
+export { titleize } from './titleize.js'
+
 export { typeOf } from './type-of.js'
 
 export { shallowEqualSortedArrays } from './shallow-equal-sorted-arrays.js'
