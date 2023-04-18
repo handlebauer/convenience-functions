@@ -6,6 +6,7 @@ export { buildURL } from './build-url.js'
 
 export { titleize } from './titleize.js'
 export { singular } from './singular.js'
+export { plural } from './plural.js'
 
 export { typeOf } from './type-of.js'
 
