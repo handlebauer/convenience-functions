@@ -3,4 +3,5 @@
  * @esxample
  *   singular('dragons') // 'dragon'
  */
-export const singular = string => string?.slice(0, -1)
+export const singular = string =>
+  string?.endsWith('s') ? string?.slice(0, -1) : string
