@@ -51,6 +51,12 @@ const flip =
     fn(b)(a)
 
 /**
+ * @template T
+ * @param {T[][]} arr
+ */
+const flatten = arr => arr.flat()
+
+/**
  * Return a property by name
  * @param {string} string
  * @returns {(obj: { [key: string]: any }) => any}
@@ -152,6 +158,7 @@ export {
   reduce,
   flip,
   prop,
+  flatten,
   trace,
   traceJSON,
   equals,
