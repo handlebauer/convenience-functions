@@ -57,6 +57,17 @@ const flip =
 const flatten = arr => arr.flat()
 
 /**
+ * @param {string} a
+ */
+const eqCaseInsensitive =
+  a =>
+  /**
+   * @param {string} b
+   */
+  b =>
+    a.toLowerCase() === b.toLowerCase()
+
+/**
  * Return a property by name
  * @param {string} string
  * @returns {(obj: { [key: string]: any }) => any}
@@ -159,6 +170,7 @@ export {
   flip,
   prop,
   flatten,
+  eqCaseInsensitive,
   trace,
   traceJSON,
   equals,
