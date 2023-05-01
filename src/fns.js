@@ -8,22 +8,17 @@ const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
 
 /**
  * Map over an array of values using the supplied function
- * @template T
- * @param {(val: T, i: number, arr: T[]) => any} fn
+ * @template U, T
+ * @param {(value: T, index: number, array: T[]) => U} fn
+ * @returns {(arr: T[]) => U[]}
  */
-const map =
-  fn =>
-  /**
-   * @param {T[]} arr
-   */
-  arr =>
-    arr.map(fn)
+const map = fn => arr => arr.map(fn)
 
 /**
  * Reduce an array of values using the supplied function
- * @template K, T
- * @param {(acc: K, val: K, i: number, arr: K[]) => any} fn
- * @param {T} val
+ * @template A, K
+ * @param {(acc: K, val: K, i: number, arr: K[]) => K} fn
+ * @param {K} val
  */
 const reduce =
   (fn, val) =>
@@ -55,17 +50,6 @@ const flip =
  * @param {T[][]} arr
  */
 const flatten = arr => arr.flat()
-
-/**
- * @param {string} a
- */
-const eqCaseInsensitive =
-  a =>
-  /**
-   * @param {string} b
-   */
-  b =>
-    a.toLowerCase() === b.toLowerCase()
 
 /**
  * Return a property by name
@@ -107,6 +91,17 @@ const traceJSON = val => (console.log(JSON.stringify(val, null, 2)), val)
  */
 const pass = _ => _
 
+/**
+ * @param {string} a
+ */
+const eqCaseInsensitive =
+  a =>
+  /**
+   * @param {string} b
+   */
+  b =>
+    a.toLowerCase() === b.toLowerCase()
+
 /** @type {(a: any) => (b: any) => boolean} */
 const equals = a => b => a === b
 
@@ -132,10 +127,10 @@ const assignTo =
 
 /**
  * Find the intersection of two unsorted arrays
- * @param {any[]} a
- * @param {any[]} b
- * @param {Set<any[]>} [c]
- * @returns {any[]}
+ * @template K
+ * @param {K[]} a
+ * @param {K[]} b
+ * @param {Set<K>} [c]
  */
 const intersection = (a, b, c) => (
   (c = new Set(a)), b.filter(val => c.has(val))
