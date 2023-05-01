@@ -78,6 +78,17 @@ const prop = string => obj =>
   string.split('.').reduce((acc, key) => acc?.[key], obj)
 
 /**
+ * @template {Record<string, any>} T
+ * @template {string} K
+ * @param  {...K} strings
+ * @returns {(obj: T) => T[K[number]][]}
+ */
+const props =
+  (...strings) =>
+  obj =>
+    strings.map(string => obj[string])
+
+/**
  * @template T
  * @param {T} val
  */
@@ -171,6 +182,7 @@ export {
   reduce,
   flip,
   prop,
+  props,
   flatten,
   eqCaseInsensitive,
   trace,
