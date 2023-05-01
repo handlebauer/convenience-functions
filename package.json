@@ -23,8 +23,7 @@
   },
   "scripts": {
     "build": "shx rm -rf ./lib ./types && rollup -c && tsc -p jsconfig.json",
-    "prepublishOnly": "npm run build",
-    "publish": "np"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@hbauer/eslint-config": "^1.2.1",
