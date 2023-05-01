@@ -69,8 +69,10 @@ const eqCaseInsensitive =
 
 /**
  * Return a property by name
- * @param {string} string
- * @returns {(obj: { [key: string]: any }) => any}
+ * @template {Record<string, any>} T
+ * @template {string} K
+ * @param {K} string
+ * @returns {(obj: T) => T[K]}
  */
 const prop = string => obj =>
   string.split('.').reduce((acc, key) => acc?.[key], obj)
