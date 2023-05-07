@@ -8,6 +8,8 @@ export { titleize } from './titleize.js'
 export { singular } from './singular.js'
 export { plural } from './plural.js'
 
+export { sleep } from './sleep.js'
+
 export { typeOf } from './type-of.js'
 
 export { shallowEqualSortedArrays } from './shallow-equal-sorted-arrays.js'
