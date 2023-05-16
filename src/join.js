@@ -8,7 +8,9 @@
  *   const pathToFile = join(dirname, 'module.js')
  */
 export const join = (base, ...paths) =>
-  paths.reduce(
-    (url, path) => new URL(path.startsWith('/') ? path.slice(1) : path, url),
-    new URL(`file://${base}`)
-  ).pathname
+  paths.reduce((url, path) => {
+    if (url.endsWith('/')) url = url.slice(0, -1)
+    if (path.endsWith('/')) path = path.slice(0, -1)
+    if (path.startsWith('/')) path = path.slice(1)
+    return url + '/' + path
+  }, new URL(`file://${base}`).pathname)
