@@ -1,4 +1,4 @@
-import { pipe } from './fns.js'
+import { pipe } from 'remeda'
 
 /**
  * @param {Record<string, string>} params

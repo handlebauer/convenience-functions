@@ -1,3 +1,5 @@
+import { removeSlashes } from './remove-slashes.js'
+
 /**
  * @param {string} base Base path with leading forward-slash, `/`
  * @param  {...string} paths One or more paths (leading forward-slash, `/`, optional)
@@ -9,8 +11,7 @@
  */
 export const join = (base, ...paths) =>
   paths.reduce((url, path) => {
-    if (url.endsWith('/')) url = url.slice(0, -1)
-    if (path.endsWith('/')) path = path.slice(0, -1)
-    if (path.startsWith('/')) path = path.slice(1)
+    url = removeSlashes(url)
+    path = removeSlashes(path)
     return url + '/' + path
   }, new URL(`file://${base}`).pathname)

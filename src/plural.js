@@ -1,5 +1,7 @@
+// TODO: fix types
+
 /**
- * Pluralize a string (note: types are fudged but work)
+ * Pluralize a string
  *
  * @template {string} S
  * @param {S} string

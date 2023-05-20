@@ -1,78 +1,4 @@
 /**
- * Pipe a value through 1+ functions
- * @param {any} val
- * @param  {function[]} fns
- * @returns {any}
- */
-const pipe = (val, ...fns) => fns.reduce((acc, fn) => fn(acc), val)
-
-/**
- * Map over an array of values using the supplied function
- * @template U, T
- * @param {(value: T, index: number, array: T[]) => U} fn
- * @returns {(arr: T[]) => U[]}
- */
-const map = fn => arr => arr.map(fn)
-
-/**
- * Reduce an array of values using the supplied function
- * @template A, K
- * @param {(acc: K, val: K, i: number, arr: K[]) => K} fn
- * @param {K} val
- */
-const reduce =
-  (fn, val) =>
-  /**
-   * @param {K[]} arr
-   */
-  arr =>
-    arr.reduce(fn, val)
-
-/**
- * @template {(...args: any[]) => any} F
- * @template A, B
- * @param {F} fn
- */
-const flip =
-  fn =>
-  /**
-   * @param {A} a
-   */
-  a =>
-  /**
-   * @param {B} b
-   */
-  b =>
-    fn(b)(a)
-
-/**
- * @template T
- * @param {T[][]} arr
- */
-const flatten = arr => arr.flat()
-
-/**
- * Return a property by name
- * @template {Record<string, any>} T
- * @template {string} K
- * @param {K} string
- * @returns {(obj: T) => T[K]}
- */
-const prop = string => obj =>
-  string.split('.').reduce((acc, key) => acc?.[key], obj)
-
-/**
- * @template {Record<string, any>} T
- * @template {string} K
- * @param  {...K} strings
- * @returns {(obj: T) => T[K[number]][]}
- */
-const props =
-  (...strings) =>
-  obj =>
-    strings.map(string => obj[string])
-
-/**
  * @template T
  * @param {T} val
  */
@@ -86,8 +12,9 @@ const traceJSON = val => (console.log(JSON.stringify(val, null, 2)), val)
 
 /**
  * Pass an argument through
- * @param {any} _
- * @returns {any}
+ * @template T
+ * @param {T} _
+ * @returns {T}
  */
 const pass = _ => _
 
@@ -102,92 +29,4 @@ const eqCaseInsensitive =
   b =>
     a.toLowerCase() === b.toLowerCase()
 
-/** @type {(a: any) => (b: any) => boolean} */
-const equals = a => b => a === b
-
-/**
- * @template T
- * @param {Array<T>} first
- */
-const first = ([first]) => first
-
-/**
- * @template O
- * @param {O} a
- */
-const assignTo =
-  a =>
-  /**
-   * @template K
-   * @param {K} b
-   * @returns {O & K}
-   */
-  b =>
-    Object.assign(a, b)
-
-/**
- * Find the intersection of two unsorted arrays
- * @template K
- * @param {K[]} a
- * @param {K[]} b
- * @param {Set<K>} [c]
- */
-const intersection = (a, b, c) => (
-  (c = new Set(a)), b.filter(val => c.has(val))
-)
-
-/**
- * @template A
- * @param {A[]} arr
- * @returns {A[]}
- */
-const reverse = arr => arr.map((_, i) => arr.at(-i - 1))
-
-/**
- * @template {string} K
- * @param {K} key
- */
-const groupBy =
-  key =>
-  /**
-   * @template {any[]} E
-   * @param {E} arr
-   * @returns {Record<K, E[number]>[]}
-   */
-  arr =>
-    arr.reduce((acc, val) => ({ ...acc, [val[key]]: val }), {})
-
-/**
- * @template {string[] | readonly string[]} K
- * @param {K} keys
- */
-const zipInto =
-  keys =>
-  /**
-   * @template {any[] | readonly any[]} E
-   * @param {E} arr
-   * @returns {{ [key in K[number]]: E[number] }}
-   */
-  arr =>
-    arr.reduce((acc, val, i) => ({ ...acc, [keys[i]]: val }), {})
-
-export {
-  pipe,
-  map,
-  reduce,
-  flip,
-  prop,
-  props,
-  flatten,
-  eqCaseInsensitive,
-  trace,
-  traceJSON,
-  equals,
-  pass,
-  first,
-  assignTo,
-  intersection,
-  reverse,
-  groupBy,
-  zipInto,
-}
+export { eqCaseInsensitive, trace, traceJSON, pass }
