@@ -1,7 +1,7 @@
 export {
-  removeLeadingSlash,
-  removeTrailingSlash,
-  removeSlashes,
+	removeLeadingSlash,
+	removeTrailingSlash,
+	removeSlashes,
 } from './remove-slashes.js'
 
 export { _dirname } from './_dirname.js'
@@ -21,4 +21,4 @@ export { typeOf } from './type-of.js'
 export { shallowEqualSortedArrays } from './shallow-equal-sorted-arrays.js'
 export { shallowEqualUnsortedArrays } from './shallow-equal-unsorted-arrays.js'
 
-export { eqCaseInsensitive, pass, trace, traceJSON } from './fns.js'
+export { eqCaseInsensitive, pass, trace, split, traceJSON } from './fns.js'
