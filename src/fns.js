@@ -40,4 +40,9 @@ const eqCaseInsensitive =
 	b =>
 		a.toLowerCase() === b.toLowerCase()
 
-export { eqCaseInsensitive, trace, traceJSON, split, pass }
+/**
+ * @returns {null}
+ */
+const returnNull = () => null
+
+export { returnNull, eqCaseInsensitive, trace, traceJSON, split, pass }

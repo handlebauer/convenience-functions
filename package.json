@@ -4,16 +4,15 @@
 	"description": "The state of being able to proceed with something with little effort or difficulty",
 	"type": "module",
 	"exports": {
-		"types": "./types/index.d.ts",
+		"types": "./lib/index.d.ts",
 		"require": "./lib/index.cjs",
 		"import": "./lib/index.mjs"
 	},
 	"module": "./lib/index.mjs",
 	"main": "./lib/index.cjs",
-	"types": "types/index.d.ts",
+	"types": "./lib/index.d.ts",
 	"files": [
-		"lib",
-		"types"
+		"lib"
 	],
 	"repository": "https://github.com/handlebauer/convenience-functions.git",
 	"author": "Donald Geddes",
@@ -23,8 +22,10 @@
 		"extends": "@hbauer/eslint-config"
 	},
 	"scripts": {
-		"build": "shx rm -rf ./lib ./types && rollup -c && tsc -p jsconfig.json",
-		"prepublishOnly": "npm run build",
+		"build": "rollup -c",
+		"types": "tsc -p jsconfig.json",
+		"clean": "shx rm -rf ./lib",
+		"prepublishOnly": "npm run clean && npm run types && npm run build",
 		"test": "ava"
 	},
 	"devDependencies": {
@@ -36,7 +37,7 @@
 		"prettier": "^2.5.1",
 		"rollup": "^2.66.1",
 		"shx": "^0.3.4",
-		"typescript": "^4.5.5"
+		"typescript": "^5.0.4"
 	},
 	"dependencies": {
 		"remeda": "^1.14.0"
