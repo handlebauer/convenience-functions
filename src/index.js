@@ -13,6 +13,7 @@ export { buildURL } from './build-url.js'
 export { titleize } from './titleize.js'
 export { singular } from './singular.js'
 export { plural } from './plural.js'
+export { formatList } from './format-list.js'
 
 export { sleep } from './sleep.js'
 
