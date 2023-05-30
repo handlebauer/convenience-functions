@@ -1,5 +1,7 @@
 /**
- * @param {string[]} items
+ * @template {Iterable<string>} A
+ *
+ * @param {A} items
  * @param {'conjunction' | 'disjunction'} [type]
  * @returns {string}
  * @example
